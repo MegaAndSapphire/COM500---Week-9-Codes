@@ -1,0 +1,53 @@
+#include <stdio.h>
+
+// Function prototypes
+void draw_triangle(int height);
+void draw_top(int height);
+void draw_base(int height);
+
+// Main function
+int main() {
+    int height;
+    
+    printf("enter height:\n");
+    scanf("%d", &height);
+    
+    draw_triangle(height);
+    
+    return 0;
+}
+
+// Function to draw the entire triangle
+void draw_triangle(int height) {
+    
+    if (height <=0){
+        printf(" ");
+        return;
+    }
+    
+    draw_top(height);
+    draw_base(height);
+}
+
+// Function to draw the top portion of the triangle
+void draw_top(int height) {
+    for (int i = 1; i < height; i++) {
+        for (int j = 0; j < height - i; j++) {
+            printf(" ");
+        }
+        printf("/");
+        for (int k = 0; k < 2 * i - 2; k++) {
+            printf(" ");
+        }
+        printf("\\\n");
+    }
+}
+
+// Function to draw the base of the triangle
+void draw_base(int height) {
+    printf("/");
+    for (int i = 0; i < 2 * height - 2; i++) {
+        printf("_");
+    }
+    printf("\\\n");
+}
