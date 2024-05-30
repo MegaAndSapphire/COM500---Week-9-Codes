@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+char is_digit(char input);
+
+int main(){
+    char input;
+    int result;
+    scanf(" %c", &input);
+    
+    result = is_digit(input);
+    printf("> %d", result);
+    
+}
+
+char is_digit(char input){
+    if (input >= '0' && input <= '9'){
+        return 1;
+    }
+    else {
+        return 0;
+    }
+}
