@@ -1,0 +1,25 @@
+#include <stdio.h>
+int identify_minimum_value(int o, int s);
+
+int main(){
+    int o, s;
+    printf("Please input number 1:\n");
+    scanf("%d", &o);
+    printf("Please input number 2:\n");
+    scanf("%d", &s);
+    int minimum_value = identify_minimum_value(o,s);
+    printf("The minimum number of %d and %d is %d", o, s, minimum_value);
+}
+
+int identify_minimum_value(int o, int s){
+    
+    int minimum_value;
+    
+    if (o > s){
+        minimum_value = s;
+    }
+    else {
+        minimum_value = o;
+    }
+    return minimum_value;
+}
